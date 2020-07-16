@@ -3,8 +3,6 @@ from dataclasses import dataclass
 
 
 class HashTable:
-    _container = {}
-
     def __init__(self):
         self.table = []
         for i in range(40):
@@ -27,8 +25,12 @@ class PackageHashTable:
                 x = PackageObject(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7])
                 self.hash_table.insert(x)
 
-    def get_all(self):
+    def get_table(self):
         return self.hash_table
+
+    def look_up(self, id: int):
+        return self.hash_table.table[id][0]
+
 
 @dataclass
 class PackageObject:
