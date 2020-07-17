@@ -10,9 +10,7 @@ class DeliveryTime:
 
     def add_minutes_by_miles(self, miles):
         miles = miles/18
-        print(miles)
         minutes = miles * 60
-        print(minutes)
         self.current = self.current + datetime.timedelta(0, 0, 0, 0, float(minutes), 0, 0)
 
     def print_current(self):

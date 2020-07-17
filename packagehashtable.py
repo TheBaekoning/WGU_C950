@@ -29,7 +29,18 @@ class PackageHashTable:
         return self.hash_table
 
     def look_up(self, id: int):
-        return self.hash_table.table[id][0]
+        return self.hash_table.table[id - 1][0]
+
+    def print_table(self):
+        index = 0
+        while (index < 40):
+            print("Package ID: ", self.hash_table.table[index][0].id_num, " | Address: ",
+                  self.hash_table.table[index][0].address, " | City: ", self.hash_table.table[index][0].city,
+                  " | State: ",
+                  self.hash_table.table[index][0].state, " | Zip: ", self.hash_table.table[index][0].zip,
+                  " | Deadline: ", self.hash_table.table[index][0].deadline, " | Weight: ",
+                  self.hash_table.table[index][0].weight, " | Status: ", self.hash_table.table[index][0].status)
+            index = index + 1
 
 
 @dataclass
